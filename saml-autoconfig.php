@@ -43,7 +43,7 @@ foreach($metadata_url_for as $idp_name => $metadata_url) {
    *  SAML metadata changes very rarely. On a production system,
    *  this data should be cached as approprate for your production system.
    */
-  $metadata_xml = file_get_contents($metadata_url);
+  $metadata_xml = SimpleSAML_Utilities::fetch($metadata_url);
 
   /*
    * Parse the SAML metadata using SimpleSAMLphp's parser.
